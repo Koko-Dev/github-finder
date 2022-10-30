@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 function Navbar({ title }) {
   return (
-    <nav className='navbar'>Navbar</nav>
+    <nav className='navbar mb-12 shadow-lg bg-neutral text-neutral-content'>Navbar</nav>
   )
 }
 
