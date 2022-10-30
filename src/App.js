@@ -6,6 +6,8 @@ function App() {
       <h1 className="text-xl">
         Hello world!
       </h1>
+      <button className='btn'>Click</button>
+
     </div>
   );
 }
