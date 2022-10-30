@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 
-function Navbar() {
+function Navbar({ title }) {
   return (
-    <div>Navbar</div>
+    <nav className='navbar'>Navbar</nav>
   )
 }
 
