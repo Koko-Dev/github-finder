@@ -1,6 +1,9 @@
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <h1 className="text-6xl">Welcome</h1>
+      {/* /.text-6xl */}
+    </div>
   )
 }
 
