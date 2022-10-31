@@ -13,6 +13,14 @@ function Navbar({ title }) {
          { title }
        </div>
        {/* /.fex-none px-2 mx-2 */}
+       <div className="flex-1 px-2 mx-2">
+         <div className="flex justify-end">
+           <Link to='/' className="btn btn-ghost btn-sm rounded-btn">Home</Link>
+           <Link to='/about' className='btn btn-ghost btn-sm rounded-btn'>About</Link>
+         </div>
+         {/* /.flex justify-end */}
+       </div>
+       {/* /.flex-1 px-2 mx-2 */}
      </div>
      {/* /.container mx-auto */}
     </nav>
