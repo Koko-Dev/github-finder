@@ -6,12 +6,16 @@ function UserItem({ user }) {
       <div className='flex-row items-center space-x-4 card-body'>
         <div className='avatar'>
           <div className='rounded-full shadow w-14 h-14'>
-              
+
           </div>
         </div>
       </div>
     </div>
   )
+}
+
+UserItem.propTypes = {
+  user: PropTypes.object.isRequired
 }
 
 export default UserItem;
