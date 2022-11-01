@@ -1,6 +1,6 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 
-const GithubContext = createContext();
+export const GithubContext = createContext();
 
 // Github url and token
 const GITHUB_URL = process.env.REACT_APP_GITHUB_URL;
@@ -28,12 +28,11 @@ export const GithubProvider = ({ children }) => {
   return (
     <GithubContext.Provider value={ {
       users,
-      loading
-    }}>
-      {children}
+      loading,
+      fetchUsers
+    } }>
+      { children }
     </GithubContext.Provider>
-  )
-
+  );
 };
 
-export default GithubContext;
