@@ -10,7 +10,7 @@ function UserSearch() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (test === '') {
+    if (text === '') {
       // todo:  create a custom alert
       alert('Please enter something');
     } else {
