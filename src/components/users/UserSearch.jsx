@@ -19,6 +19,7 @@ function UserSearch() {
     } else {
       // todo:  Search users
       searchUsers(text);
+      setText('');
     }
   };
 
