@@ -9,7 +9,7 @@ const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 
 export const GithubProvider = ({ children }) => {
   const initialState = {
-    users: [], loading: false,
+    users: [], user: {}, loading: false,
   };
 
   function init(initialState) {
