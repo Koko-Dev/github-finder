@@ -14,7 +14,7 @@ export const GithubProvider = ({ children }) => {
 
   function init(initialState) {
     return {
-      users: [], loading: false,
+      users: [], user: {}, loading: false,
     };
   }
 
