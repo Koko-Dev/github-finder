@@ -42,6 +42,31 @@ export const GithubProvider = ({ children }) => {
   };
 
 
+  // Get a single user
+  const getUser = async (login) => {
+    setLoading();
+
+    const response = await fetch(
+      `${ GITHUB_URL }/users?${ login }`,
+      {
+        headers: {
+          Authorization: `token ${ GITHUB_TOKEN }`
+        }
+      });
+
+    // redirect to /notfound if there is an error
+    if (response.status === 404) {
+      window.location = './notfound';
+    } else {
+      const data = await response.json();
+      dispatch({
+                 type: 'GET_USER',
+                 payload: data,
+               });
+    }
+  };
+
+
   // Set Loading
   const setLoading = () => dispatch({ type: 'SET_LOADING' });
 
@@ -51,7 +76,8 @@ export const GithubProvider = ({ children }) => {
       loading: state.loading,
       user: state.user,
       dispatch,
-      searchUsers
+      searchUsers,
+      getUser,
     } }>
       { children }
     </GithubContext.Provider>
