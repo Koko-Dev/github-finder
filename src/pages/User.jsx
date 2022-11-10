@@ -129,7 +129,7 @@ function User() {
           <div className='grid grid-cols-1 md:grid-cols-3'>
             <div className='stat'>
               <div className='stat-figure text-secondary'>
-                <FaUsers className={ 'text-3xl md:text-5xl' }/>
+                <FaUsers className='text-3xl md:text-5xl' />
               </div>
               <div className='stat-title pr-5'>Followers</div>
               <div className='stat-value pr-5 text-3xl md:text-4xl'>
