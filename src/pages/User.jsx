@@ -14,9 +14,6 @@ function User() {
     dispatch({ type: 'SET_LOADING' })
     const getUserData = async () => {
       const userData = await getUser(params.login)
-
-      console.log('userData:  ', typeof userData);
-
       dispatch({ type: 'GET_USER', payload: userData })
     }
 
@@ -29,10 +26,21 @@ function User() {
   }
 
   const {
+    name,
+    type,
     avatar_url,
+    location,
+    bio,
+    blog,
+    twitter_username,
+    login,
+    html_url,
+    followers,
+    following,
+    public_repos,
+    public_gists,
+    hireable,
   } = user ? user : {}
-
-  console.log('user is:',  user);
 
   return (
     <>
@@ -52,6 +60,10 @@ function User() {
               <figure>
                 <img src={avatar_url} alt="avatar" />
               </figure>
+              <div className='card-body justify-end'>
+                <h2 className='card-title mb-0'>{name}</h2>
+                <p className='flex-grow-0'>{login}</p>
+              </div>
             </div>
           </div>
         </div>
