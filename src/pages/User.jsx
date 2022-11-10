@@ -42,6 +42,9 @@ function User() {
     hireable,
   } = user ? user : {}
 
+  const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog
+
+
   return (
     <>
       <div className='w-full mx-auto lg:w-10/12'>
@@ -74,10 +77,52 @@ function User() {
                 )}
               </h1>
               <p>{ bio }</p>
+
+              <div>
+                <a
+                  href={ html_url }
+                  target='_blank'
+                  rel='noreferrer'
+                  className='btn btn-outline'
+                >
+                  Visit Github Profile
+                </a>
+              </div>
+            </div>
+
+            <div className='w-full rounded-lg shadow-md bg-base-100 stats'>
+              { location && (
+                <div className='stat'>
+                  <div className='stat-title text-md'>Location</div>
+                  <div className='text-lg stat-value'>{ location }</div>
+                </div>
+              )}
+
+              { blog && (
+                <div className='stat'>
+                  <div className='stat-title text-md'>Website</div>
+                  <a href={ websiteUrl } target='_blank' rel='noreferrer'>
+                    { websiteUrl }
+                  </a>
+                </div>
+              )}
+
+              { twitter_username && (
+                <div className='stat'>
+                  <div className='stat-title text-md'>Twitter</div>
+                  <div className='text-lg stat-value'>
+                    <a
+                      href={`https://twitter.com/${twitter_username}`}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      { twitter_username }
+                    </a>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
-
-
         </div>
       </div>
     </>
