@@ -1,25 +1,25 @@
-import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa'
+import { FaCodepen, FaStore, FaUserFriends, FaUsers } from 'react-icons/fa';
 import { useContext, useEffect } from 'react';
 import { GithubContext } from '../context/github/GithubContext';
-import { useParams, Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Spinner from '../components/layout/Spinner';
 import { getUser } from '../context/github/GithubActions';
 
 function User() {
-  const { users, user, loading, dispatch } = useContext(GithubContext);
+  const { user, loading, dispatch } = useContext(GithubContext);
 
   const params = useParams();
 
   useEffect(() => {
-    dispatch({ type: 'SET_LOADING' })
+    dispatch({ type: 'SET_LOADING' });
     const getUserData = async () => {
-      const userData = await getUser(params.login)
-      dispatch({ type: 'GET_USER', payload: userData })
-    }
+      const userData = await getUser(params.login);
+      dispatch({ type: 'GET_USER', payload: userData });
+    };
 
-    getUserData()
+    getUserData();
 
-  }, [dispatch, params.login])
+  }, [ dispatch, params.login ]);
 
   if (loading) {
     return <Spinner/>;
@@ -40,9 +40,9 @@ function User() {
     public_repos,
     public_gists,
     hireable,
-  } = user ? user : {}
+  } = user ? user : {};
 
-  const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog
+  const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog;
 
 
   return (
@@ -54,15 +54,15 @@ function User() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8">
-          <div className="custom-card-image mb-6 md:mb-0">
-            <div className="rounded-lg shadow-xl card image-full">
+        <div className='grid grid-cols-1 xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3 mb-8 md:gap-8'>
+          <div className='custom-card-image mb-6 md:mb-0'>
+            <div className='rounded-lg shadow-xl card image-full'>
               <figure>
-                <img src={avatar_url} alt="avatar" />
+                <img src={ avatar_url } alt='avatar'/>
               </figure>
               <div className='card-body justify-end'>
-                <h2 className='card-title mb-0'>{name}</h2>
-                <p className='flex-grow-0'>{login}</p>
+                <h2 className='card-title mb-0'>{ name }</h2>
+                <p className='flex-grow-0'>{ login }</p>
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@ function User() {
                 <div className='ml-2 mr-1 badge badge-success'>{ type }</div>
                 { hireable && (
                   <div className='mx-1 badge badge-info'>Hireable</div>
-                )}
+                ) }
               </h1>
               <p>{ bio }</p>
 
@@ -96,7 +96,7 @@ function User() {
                   <div className='stat-title text-md'>Location</div>
                   <div className='text-lg stat-value'>{ location }</div>
                 </div>
-              )}
+              ) }
 
               { blog && (
                 <div className='stat'>
@@ -105,14 +105,14 @@ function User() {
                     { websiteUrl }
                   </a>
                 </div>
-              )}
+              ) }
 
               { twitter_username && (
                 <div className='stat'>
                   <div className='stat-title text-md'>Twitter</div>
                   <div className='text-lg stat-value'>
                     <a
-                      href={`https://twitter.com/${twitter_username}`}
+                      href={ `https://twitter.com/${ twitter_username }` }
                       target='_blank'
                       rel='noreferrer'
                     >
@@ -120,7 +120,7 @@ function User() {
                     </a>
                   </div>
                 </div>
-              )}
+              ) }
             </div>
           </div>
         </div>
@@ -129,7 +129,7 @@ function User() {
           <div className='grid grid-cols-1 md:grid-cols-3'>
             <div className='stat'>
               <div className='stat-figure text-secondary'>
-                <FaUsers className={'text-3xl md:text-5xl'} />
+                <FaUsers className={ 'text-3xl md:text-5xl' }/>
               </div>
               <div className='stat-title pr-5'>Followers</div>
               <div className='stat-value pr-5 text-3xl md:text-4xl'>
@@ -139,7 +139,7 @@ function User() {
 
             <div className='stat'>
               <div className='stat-figure text-secondary'>
-                <FaUserFriends className='text-3xl md:text-5xl' />
+                <FaUserFriends className='text-3xl md:text-5xl'/>
               </div>
               <div className='stat-title pr-5'>Following</div>
               <div className='stat-value pr-5 text-3xl md:text-4xl'>
@@ -149,21 +149,21 @@ function User() {
 
             <div className='stat'>
               <div className='stat-figure text-secondary'>
-                <FaCodepen className='text-3xl md:text-5xl' />
+                <FaCodepen className='text-3xl md:text-5xl'/>
               </div>
               <div className='stat-title pr-5'>Public Repos</div>
               <div className='stat-value pr-5 text-3xl md:text-4xl'>
-                {public_repos}
+                { public_repos }
               </div>
             </div>
 
             <div className='stat'>
               <div className='stat-figure text-secondary'>
-                <FaStore className='text-3xl md:text-5xl' />
+                <FaStore className='text-3xl md:text-5xl'/>
               </div>
               <div className='stat-title pr-5'>Public Gists</div>
               <div className='stat-value pr-5 text-3xl md:text-4xl'>
-                {public_gists}
+                { public_gists }
               </div>
             </div>
 
