@@ -73,6 +73,7 @@ function User() {
                   <div className='mx-1 badge badge-info'>Hireable</div>
                 )}
               </h1>
+              <p>{ bio }</p>
             </div>
           </div>
 
