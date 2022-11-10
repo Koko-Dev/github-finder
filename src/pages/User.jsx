@@ -46,10 +46,7 @@ function User() {
     <>
       <div className='w-full mx-auto lg:w-10/12'>
         <div className='mb-4'>
-          <Link
-            to='/'
-            className='btn btn-ghost'
-          >
+          <Link to='/' className='btn btn-ghost'>
             Back to Search
           </Link>
         </div>
@@ -66,8 +63,20 @@ function User() {
               </div>
             </div>
           </div>
-        </div>
 
+          <div className='col-span-2'>
+            <div className='mb-6'>
+              <h1 className='text-3xl card-title'>
+                { name }
+                <div className='ml-2 mr-1 badge badge-success'>
+                  { type }
+                </div>
+              </h1>
+            </div>
+          </div>
+
+
+        </div>
       </div>
     </>
   );
