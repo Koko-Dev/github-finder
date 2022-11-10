@@ -21,12 +21,12 @@ function UserSearch() {
       // Create a custom alert
       setAlert('Please enter something', 'error');
     } else {
-      dispatch( { type: 'SET_LOADING' })
+      dispatch({ type: 'SET_LOADING' });
 
       // Search users
-      const users = await searchUsers(text)
-      dispatch( { type: 'GET_USERS', payload: users })
-      
+      const users = await searchUsers(text);
+      dispatch({ type: 'GET_USERS', payload: users });
+
       setText('');
     }
   };
