@@ -26,8 +26,7 @@ function UserSearch() {
       // Search users
       const users = await searchUsers(text)
       dispatch( { type: 'GET_USERS', payload: users })
-
-
+      
       setText('');
     }
   };
