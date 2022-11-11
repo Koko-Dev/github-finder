@@ -20,14 +20,14 @@ export const GithubProvider = ({ children }) => {
   const setLoading = () => dispatch({ type: 'SET_LOADING' });
 
   return (
-    <GithubContext.Provider value={ {
-      users: state.users,
-      loading: state.loading,
-      user: state.user,
-      dispatch,
-    } }>
-      { children }
-    </GithubContext.Provider>
+      <GithubContext.Provider value={ {
+        users: state.users,
+        loading: state.loading,
+        user: state.user,
+        dispatch,
+      } }>
+        { children }
+      </GithubContext.Provider>
   );
 };
 
