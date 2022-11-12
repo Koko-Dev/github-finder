@@ -27,21 +27,21 @@ function User() {
   }
 
   const {
-    name,
-    type,
-    avatar_url,
-    location,
-    bio,
-    blog,
-    twitter_username,
-    login,
-    html_url,
-    followers,
-    following,
-    public_repos,
-    public_gists,
-    hireable,
-  } = user ? user : {};
+          name,
+          type,
+          avatar_url,
+          location,
+          bio,
+          blog,
+          twitter_username,
+          login,
+          html_url,
+          followers,
+          following,
+          public_repos,
+          public_gists,
+          hireable,
+        } = user ? user : {};
 
   const websiteUrl = blog?.startsWith('http') ? blog : 'https://' + blog;
 
