@@ -1,10 +1,19 @@
 import PropTypes from 'prop-types';
+import RepoItem from './RepoItem';
 
-function RepoList() {
+function RepoList({ repos }) {
+
   return (
-      <div>Repo List</div>
+      <div>
+        <div>
+          <h2>Latest Repositories</h2>
+          { repos && repos.map((repo) => (
+              <RepoItem key={ repo.id } repo={ repo } />
+          ))
+          }
+        </div>
+      </div>
   )
 }
 
 export default RepoList;
-
