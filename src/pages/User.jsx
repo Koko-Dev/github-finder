@@ -4,10 +4,11 @@ import { GithubContext } from '../context/github/GithubContext';
 import { Link, useParams } from 'react-router-dom';
 import Spinner from '../components/layout/Spinner';
 import { getUserAndRepos } from '../context/github/GithubActions';
+import RepoList from '../components/repos/RepoList';
 
 
 function User() {
-  const { user, loading, dispatch } = useContext(GithubContext);
+  const { user, loading, dispatch, repos } = useContext(GithubContext);
 
   const params = useParams();
 
@@ -15,7 +16,7 @@ function User() {
     dispatch({ type: 'SET_LOADING' });
     const getUserData = async () => {
       const userData = await getUserAndRepos(params.login);
-      dispatch({ type: 'GET_USER', payload: userData });
+      dispatch({ type: 'GET_USER_AND_REPOS', payload: userData });
     };
 
     getUserData();
@@ -166,12 +167,10 @@ function User() {
                   { public_gists }
                 </div>
               </div>
-
-
             </div>
           </div>
 
-
+          <RepoList repos={ repos }/>
         </div>
       </>
   );
