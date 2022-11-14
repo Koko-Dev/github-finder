@@ -16,4 +16,9 @@ function RepoList({ repos }) {
   )
 }
 
+RepoList.checkPropTypes = {
+  repos: PropTypes.array.isRequired,
+}
+
+
 export default RepoList;
