@@ -5,12 +5,12 @@ export const GithubContext = createContext();
 
 export const GithubProvider = ({ children }) => {
   const initialState = {
-    users: [], user: {}, loading: false,
+    users: [], user: {}, repos: [], loading: false,
   };
 
   function init(initialState) {
     return {
-      users: [], user: {}, loading: false,
+      users: [], user: {}, repos: [], loading: false,
     };
   }
 
@@ -30,4 +30,3 @@ export const GithubProvider = ({ children }) => {
       </GithubContext.Provider>
   );
 };
-
