@@ -16,7 +16,7 @@ function RepoList({ repos }) {
   )
 }
 
-RepoList.checkPropTypes = {
+RepoList.propTypes = {
   repos: PropTypes.array.isRequired,
 }
 
