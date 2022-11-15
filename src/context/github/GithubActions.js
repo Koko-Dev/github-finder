@@ -32,6 +32,3 @@ export const getUserAndRepos = async (login) => {
 
   return { user: user.data, repos: repos.data };
 };
-
-
-
