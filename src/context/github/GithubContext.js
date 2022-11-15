@@ -16,9 +16,6 @@ export const GithubProvider = ({ children }) => {
 
   const [ state, dispatch ] = useReducer(githubReducer, initialState, init);
 
-  // Set Loading
-  const setLoading = () => dispatch({ type: 'SET_LOADING' });
-
   return (
       <GithubContext.Provider value={ {
         ...state,
